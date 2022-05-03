@@ -1,0 +1,4 @@
+ここは退会確認画面
+
+<%= link_to "退会しない", mypage_path %>
+<%= link_to "退会する", withdraw_customer_path, method: :patch, "data-confirm" => "OKを押すと退会手続きを完了します。本当によろしいですか？" %>

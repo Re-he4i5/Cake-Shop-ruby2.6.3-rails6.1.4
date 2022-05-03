@@ -1,0 +1,51 @@
+ここは顧客のマイページ<br>
+
+ーーーここから下は顧客の登録情報ーーー
+
+<table class="customer_info mb3">
+    <thead>
+        <th></th>
+        <th></th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>名前（姓/名）</td>
+            <td>(姓) <%= @customer.first_name %></td>
+            <td>(名) <%= @customer.last_name %></td>
+        </tr>
+        <tr>
+            <td>フリガナ（セイ/メイ）</td>
+            <td>(セイ) <%= @customer.first_name_kana %></td>
+            <td>(メイ) <%= @customer.last_name_kana %></td>
+        </tr>
+        <tr>
+            <td>メールアドレス</td>
+            <td><%= @customer.email %></td>
+        </tr>
+        <tr>
+            <td>郵便番号</td>
+            <td><%= @customer.postal_code %></td>
+        </tr>
+        <tr>
+            <td>住所</td>
+            <td><%= @customer.address %></td>
+        </tr>
+        <tr>
+            <td>電話番号</td>
+            <td><%= @customer.telephone_number %></td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<%= link_to "登録情報を編集する", edit_information_path %>
+
+
+<br>
+<%= link_to "パスワードを変更（リンクなし）", root_path %>
+<br>
+<%= link_to "配送先の一覧を見る(リンクなし)", root_path %>
+<br>
+<%= link_to "注文履歴の一覧を見る（リンクなし）", root_path %>
