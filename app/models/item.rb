@@ -18,4 +18,13 @@ class Item < ApplicationRecord
         image.variant(resize_to_limit: [width, height]).processed
     end
 
+
+    def with_tax_price
+      #(price * 1.1).ceil
+      # ceilは切り上げ
+      (price * 1.1).round
+      # round:四捨五入
+    end
+
+    
 end

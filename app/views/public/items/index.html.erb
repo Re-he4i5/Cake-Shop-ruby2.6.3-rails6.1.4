@@ -2,5 +2,5 @@
 <% @items.each do |item| %>
         <p><%= image_tag item.get_image(50,50) %></p>
         <p>商品名：<%= item.name %></p>
-        <p>商品価格：<%= item.price %></p>
+        <p>商品価格(税込価格):<%= item.with_tax_price %></p>
 <% end %>
