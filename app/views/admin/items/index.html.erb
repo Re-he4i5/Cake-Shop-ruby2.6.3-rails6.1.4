@@ -1,0 +1,25 @@
+<table>
+	<thead>
+		<tr>
+			<th>商品id</th>
+			<th>商品名</th>
+			<th>税抜価格</th>
+			<th>ジャンル</th>
+			<th>販売ステータス</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @items.each do |item| %>
+			<tr>
+				<td><%= item.id %></td>
+				<td><%= item.name %></td>
+				<td><%= item.price %> 円 </td>
+				<td><%= item.genre.name %></td>
+				<td><%= item.is_active? %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+
+<%= link_to "新規アイテム追加", new_admin_item_path %>

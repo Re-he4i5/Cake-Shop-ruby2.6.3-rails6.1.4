@@ -1,0 +1,6 @@
+ここは顧客の商品一覧ページ
+<% @items.each do |item| %>
+        <p><%= image_tag item.get_image(50,50) %></p>
+        <p>商品名：<%= item.name %></p>
+        <p>商品価格：<%= item.price %></p>
+<% end %>
