@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root 'homes#top'
-
+    get 'homes/about' => 'homes#about' ,as: 'about'
     get 'customer/mypage' => 'customers#show', as: 'mypage'
     get 'customer/information/edit' => 'customers#edit', as: 'edit_information'
     patch 'customer/information' => 'customers#update', as: 'update_information'

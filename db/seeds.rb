@@ -48,15 +48,19 @@ Customer.create!(
 Genre.create!(
   [
     {
-      name: "いちご",
+      name: "ケーキ",
       is_active: true,
     },
     {
-      name: "りんご",
+      name: "焼き菓子",
       is_active: true,
     },
     {
-      name: "ぶどう",
+      name: "プリン",
+      is_active: true,
+    },
+    {
+      name: "キャンディ",
       is_active: false,
     }
   ]
@@ -72,16 +76,16 @@ Item.create!(
       is_active: true,
     },
     {
-      name: "りんごのタルト",
+      name: "チョコクッキー",
       genre_id: "2",
-      introduction: "りんごが使われたタルト",
+      introduction: "チョコが練り込まれたクッキー",
       price: "850",
       is_active: true,
     },
     {
-      name: "ぶどうパイ",
+      name: "プリン",
       genre_id: "3",
-      introduction: "ぶどうが練り込まれたパイ",
+      introduction: "普通のプリン",
       price: "1000",
       is_active: false,
     }
