@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     sessions: 'admin/sessions',
   }
 
-  devise_for :customer, controllers: {
+  devise_for :customers, controllers: {
     sessions: 'public/sessions',
     registrations: 'public/registrations',
   }
@@ -23,12 +23,12 @@ Rails.application.routes.draw do
   scope module: :public do
     root 'homes#top'
     get 'homes/about' => 'homes#about' ,as: 'about'
-    get 'customer/mypage' => 'customers#show', as: 'mypage'
-    get 'customer/information/edit' => 'customers#edit', as: 'edit_information'
-    patch 'customer/information' => 'customers#update', as: 'update_information'
+    get 'customers/mypage' => 'customers#show', as: 'mypage'
+    get 'customers/information/edit' => 'customers#edit', as: 'edit_information'
+    patch 'customers/information' => 'customers#update', as: 'update_information'
 
-    get 'customer/unsubscribe' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
-    patch 'customer/withdraw' => 'customers#withdraw', as: 'withdraw_customer'
+    get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
+    patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw_customer'
 
     #get 'customer/item' => 'items#index'
     #get 'customer/item' => 'items#show'

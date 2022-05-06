@@ -6,13 +6,14 @@
       </h4>
     </div>
   </div>
+
   <div class = "row">
+    <%= form_with model: @customer, url: update_information_path, method: :patch do |f| %>
+    <%= render 'layouts/error_messages', resource: @customer %>
     <table class="table-borderless my-3">
       <tbody>
         <tr>
           <th>氏名</th>
-    <%= form_with model: @customer, url: update_information_path do |f| %>
-    <%= render 'layouts/error_messages', resource: @customer %>
           <td>
             <%= f.text_field :last_name %>
             <%= f.text_field :first_name %>
@@ -43,15 +44,23 @@
         </tr>
       </tbody>
     </table>
-  </div>
-  <div class="row">
-    <div class="col-md-6 text-center">
-      <%= f.submit "編集内容を保存", class:"btn btn-success" %>
+  
+
+
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <%= f.submit "編集内容を保存", class:"btn btn-success" %>
+      </div>
+      <% end %>
+    
+      
+      <div class="col-md-6 text-left">
+        <%= link_to "退会する", confirm_unsubscribe_path, class:"btn btn-danger" %>
+      </div>
     </div>
-    <% end %>
-    <div class="col-md-6 text-left">
-      <%= link_to "退会する", confirm_unsubscribe_path, class:"btn btn-danger" %>
-    </div>
+
   </div>
+
+
 </div>
 
