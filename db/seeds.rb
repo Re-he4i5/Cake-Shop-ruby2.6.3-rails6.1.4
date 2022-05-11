@@ -91,3 +91,27 @@ Item.create!(
     }
   ]
 )
+
+
+Address.create!(
+  [
+    {
+      customer_id: 1,
+      name: "111",
+      postal_code: "1111111",
+      address: "111県111市111町"
+    },
+    {
+      customer_id: 2,
+      name: "222",
+      postal_code: "2222222",
+      address: "22県22市22町"
+    },
+    {
+      customer_id: 2,
+      name: "勤務先",
+      postal_code: "2222424",
+      address: "22県24市2424"
+    }
+  ]
+)
