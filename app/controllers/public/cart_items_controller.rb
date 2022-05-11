@@ -18,11 +18,6 @@ class Public::CartItemsController < ApplicationController
     end
 
     def create
-        #@cart_item = CartItem.new(cart_item_params)
-        #@cart_item.customer_id = current_customer.id
-        #cart_items = current_customer.cart_items.all
-        #インスタンス変数でなくても動く
-
         item_id = params[:cart_item][:item_id].to_i
         amount = params[:cart_item][:amount].to_i
         cart_item = current_customer.cart_items.find_by(item_id: item_id)
