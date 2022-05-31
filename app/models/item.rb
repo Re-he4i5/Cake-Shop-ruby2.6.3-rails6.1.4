@@ -26,8 +26,5 @@ class Item < ApplicationRecord
       # round:四捨五入
     end
 
-    def self.search(keyword)
-      where(["name like?", "%#{keyword}%"])
-      #where(["name LIKE ?" , keyword])##完全一致
-    end
+    
 end
