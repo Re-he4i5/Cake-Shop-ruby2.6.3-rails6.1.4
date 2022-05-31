@@ -11,12 +11,16 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
-    get 'top' => 'homes#top', as: 'top'
 
+    root 'homes#top', as: 'top'
+    patch "/orders/:id/status" => "orders#status_update", as: "status" # 注文ステータスupdate
+    patch "/orders/:id/making_status" => "orders#making_status_update", as: "making_status" # 製作ステータスupdate
 
     resources :customers, only: [:index, :show, :edit, :update]
     resources :items
     resources :genres
+    resources :orders, only: [:show, :update]
+    resources :order_details, only: [:update]
 
 
   end
@@ -43,6 +47,12 @@ Rails.application.routes.draw do
     resources :cart_items, only: [:create, :index, :update, :destroy]
 
     resources :addresses, only: [:edit, :index, :create, :update, :destroy]
+
+    post 'orders/confirm' => 'orders#confirm'
+    #get 'orders/confirm' => 'orders#confirm'
+    get 'orders/thanks' => 'orders#thanks'
+    resources :orders, only: [:new, :index, :create, :show]
+
 
   end
 

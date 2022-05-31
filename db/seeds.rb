@@ -29,10 +29,10 @@ Customer.create!(
       password: "111111",
     },
     {
-      first_name: "鈴木",
-      last_name: "太郎",
-      first_name_kana: "スズキ",
-      last_name_kana: "タロウ",
+      first_name: "太郎",
+      last_name: "鈴木",
+      first_name_kana: "タロウ",
+      last_name_kana: "スズキ",
       email: "test2test2@gmail.com",
       postal_code: "2222222",
       address: "愛知県名古屋市2222",
@@ -91,7 +91,6 @@ Item.create!(
     }
   ]
 )
-
 
 Address.create!(
   [

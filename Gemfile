@@ -57,6 +57,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 
+gem "enum_help"
+
+
 
 #rails c ローカル用
 gem 'rb-readline' 
