@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'top' => 'homes#top', as: 'top'
 
+
+    resources :customers, only: [:index, :show, :edit, :update]
+
+
   end
 
 
@@ -20,6 +24,13 @@ Rails.application.routes.draw do
     root 'homes#top'
 
     get 'customer/mypage' => 'customers#show', as: 'mypage'
+
+    get 'customer/information/edit' => 'customers#edit', as: 'edit_information'
+    patch 'customer/information' => 'customers#update', as: 'update_information'
+
+    get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
+    patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw_customer'
+
 
   end
 
