@@ -19,7 +19,6 @@ Rails.application.routes.draw do
     resources :genres
     resources :orders, only: [:show, :update]
     resources :order_details, only: [:update]
-    get 'search' => 'items#search'
 
   end
 

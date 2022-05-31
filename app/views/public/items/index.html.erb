@@ -1,49 +1,32 @@
+
+<!-- ジャンル検索のちに実装（S1）-->
+
 <div class="container"> 
-
   <div class="row">
-    <div class = "col-md-3">
-      <h3 class="border mb-0">ジャンル検索</h3>
-      <div class="border">
-        <% @genres.each do |genre| %>
-          <div class="row">
-            <div class = "col-md-6">
-              <%= link_to items_path(id: genre.id) do %>
-                <%= genre.name %>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  
-
-
-  <div class="col">
-
     <h4 class="font-weight-bold">
       商品一覧 (全<%= @items.count %>件)
     </h4>
-  
-
-    <div class="row my-5">
-
-      <% @items.each do |item| %>
-        <div class="d-flex flex-column  mb-3">
-          <%= link_to item_path(item.id) do %>
-            <%= image_tag item.get_image(200,200) %>
-            <div>
-              <%= item.name %>
-            </div>
-
-            <div>
-              ￥<%= item.with_tax_price %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    
-    </div>
-</div>
   </div>
+
+  <div class="row my-3">
+
+    <% @items.each do |item| %>
+
+      <div class="d-flex flex-column  mb-3">
+        <%= link_to item_path(item.id) do %>
+          <%= image_tag item.get_image(200,200) %>
+          <div>
+            <%= item.name %>
+          </div>
+
+          <div>
+            ￥<%= item.with_tax_price %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  
+  </div>
+
 
 </div>
