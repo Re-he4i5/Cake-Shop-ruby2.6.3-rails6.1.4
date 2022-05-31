@@ -38,6 +38,9 @@ Rails.application.routes.draw do
     #get 'customer/item' => 'items#show'
     resources :items, only: [:index, :show]
 
+    #順番注意
+    delete "/cart_items/destroy_all" => "cart_items#destroy_all"
+    resources :cart_items, only: [:create, :index, :update, :destroy]
 
   end
 
