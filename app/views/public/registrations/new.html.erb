@@ -1,59 +1,130 @@
-<h2>Sign up</h2>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-auto md-3 bg-light">
+      <h4>新規会員登録</h4>
+    </div>
+  </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "public/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "public/shared/error_messages", resource: resource %>
 
-<div class= "field">
-    <div>名前</div>
-    <%= f.label :last_name, "(姓)" %>
-      <%= f.text_field :last_name %>
-      <%= f.label :first_name, "(名)"%>
-      <%= f.text_field :first_name %>
+    <div class="row my-3">
+
+      <div class="col-md-3">
+        名前
+      </div>
+
+      <div class="col-md-9 text-left">
+        (姓)<%= f.text_field :last_name %>
+        (名)<%= f.text_field :first_name %>
+      </div>
+
     </div>
 
-    <div class= "field">
-    <div>フリガナ</div>
-    <%= f.label :last_name_kana, "(セイ)" %>
-      <%= f.text_field :last_name_kana %>
-      <%= f.label :first_name_kana, "(メイ)"%>
-      <%= f.text_field :first_name_kana %>
+    <div class="row my-3">
+
+      <div class="col-md-3">
+        フリガナ
+      </div>
+
+      <div class="col-md-9 text-left">
+         (セイ)<%= f.text_field :last_name_kana %>
+         (メイ)<%= f.text_field :first_name_kana %>
+      </div>
+      
     </div>
 
-  <div class= "field">
-    <%= f.label :email,"メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="row my-3">
+
+      <div class="col-md-3">
+        メールアドレス
+      </div>
+
+      <div class="col-md-9 text-left">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      
+    </div>
+
+    <div class="row my-3">
+
+      <div class="col-md-3">
+        郵便番号(ハイフンなし)
+      </div>
+
+      <div class="col-md-9 text-left">
+        <%= f.text_field :postal_code %>
+      </div>
+      
+    </div>
+
+    <div class="row my-3">
+
+      <div class="col-md-3">
+        住所
+      </div>
+
+      <div class="col-md-9 text-left">
+        <%= f.text_field :address %>
+      </div>
+      
+    </div>
+
+    <div class="row my-3">
+
+      <div class="col-md-3">
+        電話番号(ハイフンなし)
+      </div>
+
+      <div class="col-md-9 text-left">
+        <%= f.text_field :telephone_number %>
+      </div>
+      
+    </div>
+
+    <div class="row my-3">
+
+      <div class="col-md-3">
+        パスワード(6文字以上)
+      </div>
+
+      <div class="col-md-9 text-left">
+        <%= f.password_field :password %>
+      </div>
+      
+    </div>
+
+
+    <div class="row my-3">
+
+      <div class="col-md-3">
+        
+      </div>
+
+      <div class="col-md-9 text-left">
+        <div class="actions">
+          <%= f.submit "新規登録", class: "btn btn-success" %>
+        </div>
+      </div>
+      
+    </div>
+
+
+  <% end %>
+
+
+  <%#= render "public/shared/links" %>
+
+  <div class="row">
+    <div class="col-md-auto m-3 bg-light">
+      <p>既に登録済みの方</p>
+    </div>
   </div>
 
-  <div class= "field ">
-    <%= f.label :postal_code, "郵便番号(ハイフンなし)" %>
-    <%= f.text_field :postal_code %>
-  </div>
-
-  <div class= "field" >
-    <%= f.label :address, "住所" %>
-    <%= f.text_field :address %>
-  </div>
-
-  <div class= "field" >
-    <%= f.label :telephone_number, "電話番号(ハイフンなし)" %>
-    <%= f.text_field :telephone_number %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password, "パスワード(6文字以上)"%>
-    <%= f.password_field :password %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "新規登録", class: "btn btn-success" %>
-  </div>
-<% end %>
+  <p>
+    <span class="mx-1"><%= link_to "こちら", new_customer_session_path %></span>からログインしてください。
+  </p>
 
 
-<%= render "public/shared/links" %>
-
-<p>既に登録済みの方</p>
-<p class="m-3">
-  <span class="mx-1"><%= link_to "こちら", new_customer_session_path %></span>からログインしてください。
-</p>
+<div>
 

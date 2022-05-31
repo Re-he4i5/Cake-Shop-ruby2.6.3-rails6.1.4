@@ -1,1 +1,43 @@
-ここはHomeです。URLはroot
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-20 text-center">
+      <p>ようこそ、ながのCAKEへ!</p>
+      <p>このサイトは、ケーキ販売のECサイトになります。</p>
+      <p>会員でない方も商品の閲覧はできますが、</p>
+      <p>購入には会員登録が必要になります。</p>
+    </div>
+  </div>
+  
+  <div class="text-left">
+    <h4 class="font-weight-bold">
+      新着商品
+    </h4>
+  </div>
+
+  <div class="row">
+  <!--  ４件まで　　!-->
+    <% @items.first(4).each do |item| %>
+
+        <div class="m-5 text-left">
+            <%= image_tag item.get_image(150,150) %>
+
+            <div class="m-1" >
+            <%= item.name %>
+            </div>
+
+            <div class="m-1">
+            ￥<%= item.with_tax_price %>
+            </div>
+
+        </div>
+
+    <% end %>
+  </div>
+
+  <div class="text-right">
+    <%= link_to items_path do %>
+        <u>全ての商品を見る＞</u>
+    <% end %>
+  </div>
+
+</div>

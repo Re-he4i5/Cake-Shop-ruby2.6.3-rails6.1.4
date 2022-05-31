@@ -1,0 +1,32 @@
+
+<!-- ジャンル検索のちに実装（S1）-->
+
+<div class="container"> 
+  <div class="row">
+    <h4 class="font-weight-bold">
+      商品一覧 (全<%= @items.count %>件)
+    </h4>
+  </div>
+
+  <div class="row my-3">
+
+    <% @items.each do |item| %>
+
+      <div class="d-flex flex-column  mb-3">
+        <%= link_to item_path(item.id) do %>
+          <%= image_tag item.get_image(200,200) %>
+          <div>
+            <%= item.name %>
+          </div>
+
+          <div>
+            ￥<%= item.with_tax_price %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  
+  </div>
+
+
+</div>
