@@ -11,29 +11,24 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
-
     root 'homes#top', as: 'top'
     patch "/orders/:id/status" => "orders#status_update", as: "status" # 注文ステータスupdate
     patch "/orders/:id/making_status" => "orders#making_status_update", as: "making_status" # 製作ステータスupdate
-
     resources :customers, only: [:index, :show, :edit, :update]
     resources :items
     resources :genres
     resources :orders, only: [:show, :update]
     resources :order_details, only: [:update]
 
-
   end
 
 
   scope module: :public do
     root 'homes#top'
-
     get 'homes/about' => 'homes#about' ,as: 'about'
     get 'customers/mypage' => 'customers#show', as: 'mypage'
     get 'customers/information/edit' => 'customers#edit', as: 'edit_information'
     patch 'customers/information' => 'customers#update', as: 'update_information'
-
 
     get 'customers/unsubscribe' => 'customers#unsubscribe', as: 'confirm_unsubscribe'
     patch 'customers/withdraw' => 'customers#withdraw', as: 'withdraw_customer'
