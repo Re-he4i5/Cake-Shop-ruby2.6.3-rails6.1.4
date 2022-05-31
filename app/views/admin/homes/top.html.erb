@@ -1,1 +1,38 @@
-ここは管理者用のトップページ
+<div class="container">
+  <div class="row">
+    <div class="col-md-auto bg-light">
+      <h4 class="font-weight-bold">
+        注文履歴一覧
+      </h4>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col-md-12 text-center">
+      <table class="table">
+        <thead class="bg-light">
+          <tr>
+            <th>購入日時</th>
+            <th>購入者</th>
+            <th>注文個数</th>
+            <th>注文ステータス</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <td><%= link_to order.created_at.strftime("%Y-%m-%d %H:%M:%S"), admin_order_path(order.id) %></td>
+            <td><%= order.customer.last_name %> <%= order.customer.first_name %></td>
+            <% total = 0 %>
+            <% order.order_details.each do |order_detail| %>
+              <% total += order_detail.amount %>
+            <% end %>
+            <td><%= total %></td>
+            <td><%= order.status_i18n %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
