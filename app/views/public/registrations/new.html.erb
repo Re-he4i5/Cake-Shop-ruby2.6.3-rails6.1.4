@@ -9,104 +9,95 @@
     <%= render "public/shared/error_messages", resource: resource %>
 
     <div class="row my-3">
-
       <div class="col-md-3">
         名前
       </div>
-
-      <div class="col-md-9 text-left">
-        (姓)<%= f.text_field :last_name %>
-        (名)<%= f.text_field :first_name %>
+      <div class="col-md-1">
+        (姓)
       </div>
-
+      <div class="col-md-3">
+        <%= f.text_field :last_name %>
+      </div>
+      <div class="col-md-1 p-">
+        (名)
+      </div>
+      <div class="col-md-3">
+        <%= f.text_field :first_name %>
+      </div>
     </div>
 
     <div class="row my-3">
-
-      <div class="col-md-3">
+      <div class="col-md-3 ">
         フリガナ
       </div>
-
-      <div class="col-md-9 text-left">
-         (セイ)<%= f.text_field :last_name_kana %>
-         (メイ)<%= f.text_field :first_name_kana %>
+      <div class="col-md-1">
+        (セイ)
       </div>
-      
+      <div class="col-md-3">
+        <%= f.text_field :last_name_kana %>
+      </div>
+      <div class="col-md-1">
+        (メイ)
+      </div>
+      <div class="col-md-3 ">
+        <%= f.text_field :first_name_kana %>
+      </div>
     </div>
 
     <div class="row my-3">
-
       <div class="col-md-3">
         メールアドレス
       </div>
-
-      <div class="col-md-9 text-left">
+      <div class="col-md-1"></div>
+      <div class="col-md-3">
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
-      
     </div>
 
     <div class="row my-3">
-
       <div class="col-md-3">
         郵便番号(ハイフンなし)
       </div>
-
-      <div class="col-md-9 text-left">
+      <div class="col-md-1"></div>
+      <div class="col-md-3">
         <%= f.text_field :postal_code %>
       </div>
-      
     </div>
 
     <div class="row my-3">
-
       <div class="col-md-3">
         住所
       </div>
-
-      <div class="col-md-9 text-left">
+      <div class="col-md-1"></div>
+      <div class="col-md-3">
         <%= f.text_field :address %>
       </div>
-      
     </div>
 
     <div class="row my-3">
-
       <div class="col-md-3">
         電話番号(ハイフンなし)
       </div>
-
-      <div class="col-md-9 text-left">
+      <div class="col-md-1"></div>
+      <div class="col-md-3">
         <%= f.text_field :telephone_number %>
       </div>
-      
     </div>
 
     <div class="row my-3">
-
       <div class="col-md-3">
         パスワード(6文字以上)
       </div>
-
-      <div class="col-md-9 text-left">
+      <div class="col-md-1"></div>
+      <div class="col-md-3">
         <%= f.password_field :password %>
       </div>
-      
     </div>
 
-
-    <div class="row my-3">
-
-      <div class="col-md-3">
-        
+    <div class="row mt-5">
+      <div class="col-5 actions text-center m-auto">
+        <%= f.submit "新規登録", class: "btn btn-success w-50" %>
       </div>
-
-      <div class="col-md-9 text-left">
-        <div class="actions">
-          <%= f.submit "新規登録", class: "btn btn-success" %>
-        </div>
-      </div>
-      
     </div>
 
 
@@ -115,16 +106,11 @@
 
   <%#= render "public/shared/links" %>
 
-  <div class="row">
-    <div class="col-md-auto m-3 bg-light">
-      <p>既に登録済みの方</p>
+
+  <div class="row mt-3">
+    <div class="col-5 actions text-center m-auto">
+      <p>既に登録済みの方は<span class="mx-1"><%= link_to "こちら", new_customer_session_path %></span>からログインしてください。</p>
     </div>
   </div>
-
-  <p>
-    <span class="mx-1"><%= link_to "こちら", new_customer_session_path %></span>からログインしてください。
-  </p>
-
-
 <div>
 

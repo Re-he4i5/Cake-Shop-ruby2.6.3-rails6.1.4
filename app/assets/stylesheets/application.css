@@ -14,4 +14,14 @@
  *= require_self
  */
 
- 
+.logo-img{
+  background-image: url('cake.jpg');
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  /* 子要素も半透明 */
+  /* opacity: 0.3; */
+
+}
