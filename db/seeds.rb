@@ -62,6 +62,10 @@ Genre.create!(
     {
       name: "キャンディ",
       is_active: false,
+    },
+    {
+      name: "生菓子",
+      is_active: false,
     }
   ]
 )
@@ -74,6 +78,11 @@ Item.create!(
       introduction: "いちごがたくさん使われたケーキ",
       price: "800",
       is_active: true,
+      image: ActiveStorage::Blob.create_after_upload!(
+        io: File.open(Rails.root.join('app/assets/images/cake.jpg')),
+        filename: 'cake.jpg',
+        content_type: 'cake.jpg'
+      )
     },
     {
       name: "チョコクッキー",
