@@ -14,5 +14,5 @@ EC サイト
 
 ### docker
 
-- `docker compose build`,`docker compose up (-d)`, `docker exec -it cake-shop sh`
+- `docker compose build`,`docker compose up (-d)`, `docker compose exec -it cake-shop sh`
 - `yarn install`, `rails db:migrate`, `rails db:seed` in container
