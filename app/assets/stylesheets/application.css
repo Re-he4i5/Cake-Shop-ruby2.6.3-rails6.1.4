@@ -19,11 +19,13 @@
   height: 400px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: lighten;
 
   /* 子要素も半透明 */
   /* opacity: 0.3; */
 }
 
-.logo-text {
+/* .logo-text {
   background-color: rgba(145, 72, 72, 0.562);
-}
+} */
