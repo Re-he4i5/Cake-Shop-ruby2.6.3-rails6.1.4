@@ -10,9 +10,7 @@
 
   <div class="row my-2">
     <div class="col-md-9 text-left">
-
       <table class="table table-bordered">
-
         <thead class="bg-light">
           <tr>
             <th>商品名</th>
@@ -21,7 +19,6 @@
             <th>小計</th>
           </tr>
         </thead>
-
         <tbody>
           <% @cart_items.each do |cart_item| %>
             <tr>
@@ -38,10 +35,9 @@
             </tr>
           <% end %>
         </tbody>
-
       </table>
-
     </div>
+
     <div class="col-md-3 text-center">
       <table class="table table-bordered">
         <tbody>
@@ -61,26 +57,26 @@
       </table>
     </div>
   </div>
-  <div class="row">
+
+  <div class="row my-3 ml-2">
     <div class="col-md-5-auto font-weight-bold">
       支払方法
     </div>
     <div class="col-md-6">
       <%= @order.payment_method_i18n %>
     </div>
-
   </div>
-  <div class="row my-3">
+
+  <div class="row my-3 ml-2">
     <div class="col-md-5-auto font-weight-bold">
       お届け先
     </div>
     <div class="col-md-7">
       〒<%= @order.postal_code + @order.address %>
-    </div>
-    <div class="col-md-5 text-center">
-      <%= @order.name %>
+      <br><%= @order.name %>
     </div>
   </div>
+
   <%= form_with model: @order, url: orders_path do |f| %>
     <%= f.hidden_field :postal_code, :value => @order.postal_code %>
     <%= f.hidden_field :address, :value => @order.address %>

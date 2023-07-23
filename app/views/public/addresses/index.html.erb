@@ -16,7 +16,7 @@
       </div>
 
       <div class="col-md-4">
-        <%= f.text_field :postal_code %>
+        <%= f.text_field :postal_code, placeholder: "00011112222" %>
       </div>
 
     </div>
@@ -28,7 +28,7 @@
       </div>
 
       <div class="col-md-6">
-        <%= f.text_field :address %>
+        <%= f.text_field :address, size:"50*40", placeholder: "東京都渋谷区代々木"%>
       </div>
 
     </div>
@@ -40,7 +40,7 @@
       </div>
 
       <div class="col-md-4">
-        <%= f.text_field :name %>
+        <%= f.text_field :name, placeholder: "鈴木一郎" %>
       </div>
 
       <div class="col-md-2 text-right">
@@ -52,32 +52,34 @@
   <% end %>
 
   <div class="row my-5">
-    <table class="table table-bordered">
+    <div class="col-9">
+      <table class="table table-bordered">
 
-      <thead class="bg-light">
-        <tr>
-          <th>郵便番号</th>
-          <th>住所</th>
-          <th>宛名</th>
-          <th></th>
-        </tr>
-      </thead>
+        <thead class="bg-light">
+          <tr>
+            <th>郵便番号</th>
+            <th>住所</th>
+            <th>宛名</th>
+            <th></th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <% @addresses.each do |address| %>
-        <tr>
-          <td><%= address.postal_code %></td>
-          <td><%= address.address %></td>
-          <td><%= address.name %></td>
-          <td>
-            <%= link_to "編集する", edit_address_path(address.id), class:"btn btn-success" %>
-            <%= link_to "削除する", address_path(address.id), method: :delete, class:"btn btn-danger" %>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
-      
-    </table>
+        <tbody>
+          <% @addresses.each do |address| %>
+          <tr>
+            <td><%= address.postal_code %></td>
+            <td><%= address.address %></td>
+            <td><%= address.name %></td>
+            <td class="d-flex justify-content-center align-items-center" style="display: flex;">
+  <%= link_to "編集する", edit_address_path(address.id), class: "btn btn-success", style: "flex-grow: 1; margin: 5px;" %>
+  <%= link_to "削除する", address_path(address.id), method: :delete, class: "btn btn-danger", style: "flex-grow: 1; margin: 5px;" %>
+</td>
+          </tr>
+          <% end %>
+        </tbody>
+        
+      </table>
+    </div>
   </div>
 
 </div>
