@@ -79,24 +79,94 @@ Item.create!(
       price: "800",
       is_active: true,
       image: ActiveStorage::Blob.create_after_upload!(
-        io: File.open(Rails.root.join('app/assets/images/cake.jpg')),
+        io: File.open(Rails.root.join('app/assets/images/cake_strawberry.jpg')),
         filename: 'cake.jpg',
         content_type: 'cake.jpg'
       )
     },
     {
-      name: "チョコクッキー",
+      name: "マカロン",
       genre_id: "2",
-      introduction: "チョコが練り込まれたクッキー",
+      introduction: "カラフルなマカロン",
       price: "850",
       is_active: true,
+      image: ActiveStorage::Blob.create_after_upload!(
+        io: File.open(Rails.root.join('app/assets/images/Macarons.jpg')),
+        filename: 'Macarons.jpg',
+        content_type: 'Macarons.jpg'
+      )
     },
     {
-      name: "プリン",
-      genre_id: "3",
-      introduction: "普通のプリン",
+      name: "ドーナツ",
+      genre_id: "2",
+      introduction: "半分をチョコレートでコーティングしました",
+      price: "400",
+      is_active: false,
+      image: ActiveStorage::Blob.create_after_upload!(
+        io: File.open(Rails.root.join('app/assets/images/donut_harf_choko.jpg')),
+        filename: 'donut_harf_choko.jpg',
+        content_type: 'donut_harf_choko.jpg'
+      )
+    },
+    {
+      name: "モンブラン",
+      genre_id: "1",
+      introduction: "栗の甘露煮がたっぷり",
+      price: "800",
+      is_active: false,
+      image: ActiveStorage::Blob.create_after_upload!(
+        io: File.open(Rails.root.join('app/assets/images/Mont_Blanc.jpg')),
+        filename: 'Mont_Blanc.jpg',
+        content_type: 'Mont_Blanc.jpg'
+      )
+    },
+    {
+      name: "果実ケーキ",
+      genre_id: "1",
+      introduction: "季節の果物をたっぷり使ったケーキ",
       price: "1000",
       is_active: false,
+      image: ActiveStorage::Blob.create_after_upload!(
+        io: File.open(Rails.root.join('app/assets/images/cake_fruit.jpg')),
+        filename: 'cake_fruit.jpg',
+        content_type: 'cake_fruit.jpg'
+      )
+    },
+    {
+      name: "英語クッキー",
+      genre_id: "2",
+      introduction: "英語で書かれたクッキー",
+      price: "900",
+      is_active: false,
+      image: ActiveStorage::Blob.create_after_upload!(
+        io: File.open(Rails.root.join('app/assets/images/cookie_english.jpg')),
+        filename: 'cookie_english.jpg',
+        content_type: 'cookie_english.jpg'
+      )
+    },
+    {
+      name: "イベントクッキー",
+      genre_id: "2",
+      introduction: "イベントに合わせたクッキー",
+      price: "1000",
+      is_active: false,
+      image: ActiveStorage::Blob.create_after_upload!(
+        io: File.open(Rails.root.join('app/assets/images/cookie_Xmas.jpg')),
+        filename: 'cookie_Xmas.jpg',
+        content_type: 'cookie_Xmas.jpg'
+      )
+    },
+    {
+      name: "スマイルクッキー",
+      genre_id: "2",
+      introduction: "笑顔のクッキー",
+      price: "1000",
+      is_active: false,
+      image: ActiveStorage::Blob.create_after_upload!(
+        io: File.open(Rails.root.join('app/assets/images/cookie_smile.jpg')),
+        filename: 'cookie_smile.jpg',
+        content_type: 'cookie_smile.jpg'
+      )
     }
   ]
 )
@@ -120,6 +190,88 @@ Address.create!(
       name: "勤務先",
       postal_code: "2222424",
       address: "22県24市2424"
+    }
+  ]
+)
+
+Order.create!(
+  [
+    {
+      customer_id: 1,
+      payment_method: 0,
+      shipping_cost: 800,
+      total_payment: 1600,
+      address: "111県111市111町",
+      name: "111",
+      postal_code: "1111111",
+      status: 0
+    },
+    {
+      customer_id: 2,
+      payment_method: 0,
+      shipping_cost: 800,
+      total_payment: 1600,
+      address: "22県22市22町",
+      name: "222",
+      postal_code: "2222222",
+      status: 0
+    },
+    {
+      customer_id: 2,
+      payment_method: 0,
+      shipping_cost: 800,
+      total_payment: 1600,
+      address: "22県24市2424",
+      name: "勤務先",
+      postal_code: "2222424",
+      status: 0
+    }
+  ]
+)
+
+OrderDetail.create!(
+  [
+    {
+      order_id: 1,
+      item_id: 1,
+      price: 800,
+      amount: 1,
+      making_status: 0
+    },
+    {
+      order_id: 1,
+      item_id: 2,
+      price: 850,
+      amount: 1,
+      making_status: 0
+    },
+    {
+      order_id: 2,
+      item_id: 1,
+      price: 800,
+      amount: 1,
+      making_status: 0
+    },
+    {
+      order_id: 2,
+      item_id: 2,
+      price: 850,
+      amount: 1,
+      making_status: 0
+    },
+    {
+      order_id: 3,
+      item_id: 1,
+      price: 800,
+      amount: 1,
+      making_status: 0
+    },
+    {
+      order_id: 3,
+      item_id: 2,
+      price: 850,
+      amount: 1,
+      making_status: 0
     }
   ]
 )
