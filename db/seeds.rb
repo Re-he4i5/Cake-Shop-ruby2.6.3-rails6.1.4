@@ -101,7 +101,7 @@ Item.create!(
       genre_id: "2",
       introduction: "半分をチョコレートでコーティングしました",
       price: "400",
-      is_active: false,
+      is_active: true,
       image: ActiveStorage::Blob.create_after_upload!(
         io: File.open(Rails.root.join('app/assets/images/donut_harf_choko.jpg')),
         filename: 'donut_harf_choko.jpg',
@@ -113,7 +113,7 @@ Item.create!(
       genre_id: "1",
       introduction: "栗の甘露煮がたっぷり",
       price: "800",
-      is_active: false,
+      is_active: true,
       image: ActiveStorage::Blob.create_after_upload!(
         io: File.open(Rails.root.join('app/assets/images/Mont_Blanc.jpg')),
         filename: 'Mont_Blanc.jpg',
@@ -125,7 +125,7 @@ Item.create!(
       genre_id: "1",
       introduction: "季節の果物をたっぷり使ったケーキ",
       price: "1000",
-      is_active: false,
+      is_active: true,
       image: ActiveStorage::Blob.create_after_upload!(
         io: File.open(Rails.root.join('app/assets/images/cake_fruit.jpg')),
         filename: 'cake_fruit.jpg',
@@ -137,7 +137,7 @@ Item.create!(
       genre_id: "2",
       introduction: "英語で書かれたクッキー",
       price: "900",
-      is_active: false,
+      is_active: true,
       image: ActiveStorage::Blob.create_after_upload!(
         io: File.open(Rails.root.join('app/assets/images/cookie_english.jpg')),
         filename: 'cookie_english.jpg',
@@ -149,7 +149,7 @@ Item.create!(
       genre_id: "2",
       introduction: "イベントに合わせたクッキー",
       price: "1000",
-      is_active: false,
+      is_active: true,
       image: ActiveStorage::Blob.create_after_upload!(
         io: File.open(Rails.root.join('app/assets/images/cookie_Xmas.jpg')),
         filename: 'cookie_Xmas.jpg',

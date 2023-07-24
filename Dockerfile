@@ -18,5 +18,7 @@ COPY Gemfile.lock ${ROOT}
 RUN bundle install
 COPY . ${ROOT}
 
+RUN rm -f tmp/pids/server.pid
+
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
