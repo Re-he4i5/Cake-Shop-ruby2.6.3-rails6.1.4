@@ -1,36 +1,31 @@
 <div class="container">
-  <div class="row justify-content-center logo-img">
-    <div class="col-md-20 text-center m-auto logo-text">
+  <div class="d-flex justify-content-center logo-img">
+    <div class="text-center m-auto logo-text py-3">
       <p>ようこそ、ながのCAKEへ!</p>
       <p>このサイトは、ケーキ販売のECサイトになります。</p>
       <p>会員でない方も商品の閲覧はできますが、</p>
-      <p>購入には会員登録が必要になります。</p>
+      <p class="m-0">購入には会員登録が必要になります。</p>
     </div>
   </div>
   
-  <div class="text-left">
-    <h4 class="font-weight-bold">
+    <h4 class="font-weight-bold py-4">
       新着商品
     </h4>
-  </div>
 
   <div class="row">
-  <!--  ４件まで　　!-->
     <% @items.first(4).each do |item| %>
+      <div class="col-12 col-md-3">
+            <%= image_tag item.get_image(500, 500), class: 'img-fluid' %>
 
-        <div class="m-5 text-left">
-            <%= image_tag item.get_image(150,150) %>
-
-            <div class="m-1" >
-            <%= item.name %>
+            <div class="my-1">
+              <%= item.name %>
             </div>
 
-            <div class="m-1">
-            ￥<%= item.with_tax_price %>
+            <div class="my-1">
+              &yen;<%= item.with_tax_price %>
             </div>
 
-        </div>
-
+      </div>
     <% end %>
   </div>
 
