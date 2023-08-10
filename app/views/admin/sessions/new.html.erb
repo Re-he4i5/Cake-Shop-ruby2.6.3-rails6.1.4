@@ -10,11 +10,11 @@
   <div class="field row mx-auto ">
 
     <div class="col-sm-2 col-form-label">
-      <%= f.label :メールアドレス %>
+      <%= f.label :email, "メールアドレス"%>
     </div>
 
     <div class="col">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
     </div>
 
   </div>
@@ -22,11 +22,11 @@
   <div class="field row mx-auto">
 
     <div class="col-sm-2 col-form-label">
-      <%= f.label :パスワード %>
+      <%= f.label :password, "パスワード" %>
     </div>
 
     <div class="col">
-      <%= f.password_field :password, autocomplete: "current-password" %>
+      <%= f.password_field :password, autocomplete: "current-password" , class: 'form-control' %>
     </div>
     
   </div>

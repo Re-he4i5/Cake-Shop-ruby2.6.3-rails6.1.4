@@ -19,7 +19,7 @@
 			</div>
 			<div class="row my-4">
 				<div class="col-5">
-					商品名
+					<%= f.label :name, "商品名" %>
 				</div>
 				<div class="col-6">
 					<%= f.text_field :name, placeholder: "商品名", size: "50x10" %>
@@ -27,7 +27,7 @@
 			</div>
 			<div class="row" style="margin-top:10%; margin-bottom:10%;">
 				<div class="col-5">
-					商品説明
+					<%= f.label :introduction, "商品説明" %>
 				</div>
 				<div class="col-6">
 					<%= f.text_area :introduction, placeholder: "ここに説明文を記述します", size: "53x10" %>
@@ -35,7 +35,7 @@
 			</div>
 			<div class="row my-4">
 				<div class="col-5">
-					ジャンル
+					<%= f.label :genre_id, "ジャンル" %>
 				</div>
 				<div class="col-6">
 					<%= f.collection_select( :genre_id, Genre.all, :id, :name, {include_blank: "---選択して下さい---"}, {style:"width: 165%; text-align: center"}) %>
@@ -44,7 +44,7 @@
 			</div>
 			<div class="row my-4">
 				<div class="col-5">
-					税抜価格
+					<%= f.label :price, "税抜価格" %>
 				</div>
 				<div class="col-6">
 					<%= f.text_field :price, placeholder: "1000", size: "50x10"%>円
@@ -55,8 +55,10 @@
 					販売ステータス
 				</div>
 				<div class="col-6">
-					<%= f.radio_button :is_active, true%>販売中
-					<%= f.radio_button :is_active, false, class:"ml-3" %>販売停止中
+					<%= f.radio_button :is_active, true%>
+					<%= f.label :is_active, "販売中", class:"ml-3", for:"item_is_active_true" %>
+					<%= f.radio_button :is_active, false, class:"ml-3" %>
+					<%= f.label :is_active, "販売停止中", class:"ml-3", for:"item_is_active_false" %>
 				</div>
 			</div>
 			<div class="row my-2">

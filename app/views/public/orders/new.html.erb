@@ -15,17 +15,15 @@
 
     <div class="row">
       <div class="col ml-4">
-        <!--クレジットカード-->
-        <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
-        <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card] %>
+        <%= f.radio_button :payment_method, Order.payment_methods.key(0)%>
+        <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card], for: "order_payment_method_credit_card" %>
       </div>
     </div>
 
     <div class="row">
       <div class="col ml-4">
-        <!--銀行振込-->
         <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
-        <%= f.label :payment_method, Order.payment_methods_i18n[:transfer] %>
+        <%= f.label :payment_method, Order.payment_methods_i18n[:transfer], for: "order_payment_method_transfer"%>
       </div>
     </div>
 
@@ -74,7 +72,7 @@
 
     <div class="row ml-4">
       <div class="col-3 ml-3">
-        郵便番号(ハイフンなし)
+        <%= f.label :postal_code %>
       </div>
       <div class="col-5">
         <%= f.text_field :postal_code, placeholder: "00011112222" %>
@@ -83,7 +81,7 @@
 
     <div class="row ml-4 py-2">
       <div class="col-3 ml-3">
-        住所
+        <%= f.label :address %>
       </div>
       <div class="col-5">
         <%= f.text_field :address, size: "50x20", placeholder: "東京都渋谷区代々木" %>
@@ -92,7 +90,7 @@
 
     <div class="row ml-4">
       <div class="col-3 ml-3">
-        宛名
+        <%= f.label :name %>
       </div>
       <div class="col-5">
         <%= f.text_field :name, placeholder: "鈴木一郎" %>

@@ -1,21 +1,53 @@
-  ja:
-    enums:
+ja:
+  enums:
+    order:
+      payment_method:
+        credit_card: "クレジットカード"
+        transfer: "銀行振込"
+
+      status:
+        waiting_for_deposit: "入金待ち"
+        payment_confirmation: "入金確認"
+        production: "製作中"
+        ready_to_ship: "発送準備中"
+        sent: "発送済み"
+
+    order_detail:
+      making_status:
+        not_produced: "着手不可"
+        waiting_for_deposit: "製作待ち"
+        production: "製作中"
+        complete: "製作完了"
+
+  activerecord:
+    models:
+      customer: "顧客"
+      address: "住所"
+      order: "注文"
+    attributes:
+      customer:
+        last_name: "姓"
+        first_name: "名"
+        last_name_kana: "姓(カナ)"
+        first_name_kana: "名(カナ)"
+        postal_code: "郵便番号(ハイフン無し)"
+        address: "住所"
+        telephone_number: "電話番号(ハイフン無し)"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード(確認用)"
+      address:
+        name: "宛名"
+        postal_code: "郵便番号(ハイフン無し)"
+        address: "住所"
+        customer_id: "顧客ID"
       order:
-        payment_method:
-          credit_card: "クレジットカード"
-          transfer: "銀行振込"
-
-        status:
-          waiting_for_deposit: '入金待ち'
-          payment_confirmation: '入金確認'
-          production: '製作中'
-          ready_to_ship: '発送準備中'
-          sent: '発送済み'
-
-      order_detail:
-        making_status:
-          not_produced: '着手不可'
-          waiting_for_deposit: '製作待ち'
-          production: '製作中'
-          complete: '製作完了'
-
+        customer_id: "顧客ID"
+        payment_method: "支払い方法"
+        status: "注文ステータス"
+        total_price: "合計金額"
+        postage: "送料"
+        address_id: "住所ID"
+        name: "宛名"
+        address: "住所"
+        postal_code: "郵便番号(ハイフン無し)"

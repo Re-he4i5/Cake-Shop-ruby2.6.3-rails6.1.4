@@ -37,7 +37,7 @@
                     </li>
 
                     <%= form_with url: admin_search_path, method: :get, class: "d-flex" do |f| %>
-                        <%= f.text_field :search_word, value: @search_word, class: "form-control me-2 mr-1" %>
+                        <%= f.text_field :search_word, value: @search_word, class: "form-control me-2 mr-1", placeholder: '商品名'%>
                         <%= f.submit "Search", class: "btn btn-success" %>
                     <% end %>
 
