@@ -16,12 +16,12 @@
 
 
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= form_with model: @customer, url: session_path(resource_name) do |f| %>
     <div class=" text-center">
     
       <div class="col-md-20 text-center">
           <%= f.label :メールアドレス %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :emSail, autofocus: true, autocomplete: "email" %>
       </div>
 
 
