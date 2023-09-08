@@ -26,6 +26,7 @@
   /* opacity: 0.3; */
 }
 
-/* .logo-text {
+.logo-text {
   background-color: rgba(145, 72, 72, 0.562);
-} */
+  width: 100%;
+}

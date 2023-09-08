@@ -1,15 +1,15 @@
 
 <div class="container">
 
-  <div class="row m-1">
-    <div class="col-md-auto m-1 md-3 text-left bg-light">
+  <div class="row my-1">
+    <div class="col-md-auto my-1 md-3 text-left bg-light">
       <h4>ログイン</h4>
     </div>
   </div>
 
 
-  <div class="row m-3">
-      <div class="m-2 text-left bg-light">
+  <div class="row my-3">
+      <div class="my-2 bg-light">
         会員の方はこちらからログイン
       </div>
   </div>
@@ -26,8 +26,8 @@
 
 
       <div class="col-md-20 text-center">
-        <%= f.label :パスワード %>
-        <%= f.password_field :password, autocomplete: "current-password" %>
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
       </div>
 
       <div class="row my-3">
@@ -38,8 +38,8 @@
     <% end %>
   </div>
 
-    <div class="row m-3">
-      <div class=" text-left bg-light">
+    <div class="row my-3">
+      <div class=" bg-light">
         会員登録がお済みでない方
       </div>
     </div>

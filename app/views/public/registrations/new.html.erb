@@ -13,16 +13,16 @@
         名前
       </div>
       <div class="col-md-1">
-        (姓)
+        <%= f.label :last_name %>
       </div>
       <div class="col-md-3">
-        <%= f.text_field :last_name %>
+        <%= f.text_field :last_name, class: 'form-control', placeholder: "山田"%>
       </div>
       <div class="col-md-1 p-">
-        (名)
+        <%= f.label :first_name %>
       </div>
       <div class="col-md-3">
-        <%= f.text_field :first_name %>
+        <%= f.text_field :first_name, class: 'form-control', placeholder: "太郎" %>
       </div>
     </div>
 
@@ -31,66 +31,61 @@
         フリガナ
       </div>
       <div class="col-md-1">
-        (セイ)
+        <%= f.label :last_name_kana %>
       </div>
       <div class="col-md-3">
-        <%= f.text_field :last_name_kana %>
+        <%= f.text_field :last_name_kana , class: 'form-control', placeholder: "ヤマダ"%>
       </div>
       <div class="col-md-1">
-        (メイ)
+        <%= f.label :first_name_kana %>
       </div>
       <div class="col-md-3 ">
-        <%= f.text_field :first_name_kana %>
+        <%= f.text_field :first_name_kana, class: 'form-control' , placeholder: "タロウ"%>
       </div>
     </div>
 
     <div class="row my-3">
       <div class="col-md-3">
-        メールアドレス
+        <%= f.label :email %>
       </div>
-      <div class="col-md-1"></div>
-      <div class="col-md-3">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-    </div>
-
-    <div class="row my-3">
-      <div class="col-md-3">
-        郵便番号(ハイフンなし)
-      </div>
-      <div class="col-md-1"></div>
-      <div class="col-md-3">
-        <%= f.text_field :postal_code %>
+      <div class="offset-0 offset-md-1 col-md-8">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "yamada.taro@gmail.com" %>
       </div>
     </div>
 
     <div class="row my-3">
       <div class="col-md-3">
-        住所
+        <%= f.label :postal_code %>
       </div>
-      <div class="col-md-1"></div>
-      <div class="col-md-3">
-        <%= f.text_field :address %>
-      </div>
-    </div>
-
-    <div class="row my-3">
-      <div class="col-md-3">
-        電話番号(ハイフンなし)
-      </div>
-      <div class="col-md-1"></div>
-      <div class="col-md-3">
-        <%= f.text_field :telephone_number %>
+      <div class="offset-0 offset-md-1 col-md-8">
+        <%= f.text_field :postal_code, class: 'form-control', placeholder: "0001111"%>
       </div>
     </div>
 
     <div class="row my-3">
       <div class="col-md-3">
-        パスワード(6文字以上)
+        <%= f.label :address %>
       </div>
-      <div class="col-md-1"></div>
+      <div class="offset-0 offset-md-1 col-md-8">
+        <%= f.text_field :address, class: 'form-control',placeholder: "東京都渋谷区代々木"%>
+      </div>
+    </div>
+
+    <div class="row my-3">
       <div class="col-md-3">
-        <%= f.password_field :password %>
+        <%= f.label :telephone_number %>
+      </div>
+      <div class="offset-0 offset-md-1 col-md-8">
+        <%= f.text_field :telephone_number , class: 'form-control', placeholder: "00011112222" %>
+      </div>
+    </div>
+
+    <div class="row my-3">
+      <div class="col-md-3">
+        <%= f.label :password %>
+      </div>
+      <div class="offset-0 offset-md-1 col-md-8">
+        <%= f.password_field :password, class: 'form-control' %>
       </div>
     </div>
 

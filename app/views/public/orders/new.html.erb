@@ -74,7 +74,7 @@
 
     <div class="row ml-4">
       <div class="col-3 ml-3">
-        郵便番号(ハイフンなし)
+        <%= f.label :postal_code %>
       </div>
       <div class="col-5">
         <%= f.text_field :postal_code, placeholder: "00011112222" %>
@@ -83,7 +83,7 @@
 
     <div class="row ml-4 py-2">
       <div class="col-3 ml-3">
-        住所
+        <%= f.label :address %>
       </div>
       <div class="col-5">
         <%= f.text_field :address, size: "50x20", placeholder: "東京都渋谷区代々木" %>
@@ -92,7 +92,7 @@
 
     <div class="row ml-4">
       <div class="col-3 ml-3">
-        宛名
+        <%= f.label :name %>
       </div>
       <div class="col-5">
         <%= f.text_field :name, placeholder: "鈴木一郎" %>
