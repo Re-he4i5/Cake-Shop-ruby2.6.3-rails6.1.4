@@ -13,19 +13,21 @@
 
   <%= form_with model: @order, url: orders_confirm_path do |f| %>
 
-    <div class="row">
-      <div class="col ml-4">
-        <%= f.radio_button :payment_method, Order.payment_methods.key(0)%>
-        <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card], for: "order_payment_method_credit_card" %>
-      </div>
-    </div>
+<div class="row">
+  <div class="col ml-4">
+    <!--クレジットカード-->
+    <%= f.radio_button :payment_method, Order.payment_methods.key(0), id: "credit_card_radio" %>
+    <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card], for: "credit_card_radio" %>
+  </div>
+</div>
 
-    <div class="row">
-      <div class="col ml-4">
-        <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
-        <%= f.label :payment_method, Order.payment_methods_i18n[:transfer], for: "order_payment_method_transfer"%>
-      </div>
-    </div>
+<div class="row">
+  <div class="col ml-4">
+    <!--銀行振込-->
+    <%= f.radio_button :payment_method, Order.payment_methods.key(1), id: "transfer_radio" %>
+    <%= f.label :payment_method, Order.payment_methods_i18n[:transfer], for: "transfer_radio" %>
+  </div>
+</div>
 
     <div class="row my-2">
       <h4 class="font-weight-bold">
