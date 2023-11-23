@@ -1,18 +1,29 @@
-# Cake_Shop
+# cake-shop
 
-EC サイト
+ケーキ屋さんの EC サイトです。
 
-## front & back
+## 特徴
 
-- ruby on rails
+- 顧客と管理者のログイン機能
+- 顧客の注文機能
+- 管理者の商品登録機能
+- 管理者の注文管理機能
 
-## Usage
+## 始め方
 
-### local
+### 前提条件
 
-- `bundle install`,`yarn install`, `rails db:migrate`, `rails db:seed`
+- Ruby 3.1.2
+- Rails 6.1.4
 
-### docker
+### コマンド
 
-- `docker compose build`,`docker compose up (-d)`, `docker compose exec -it cake-shop sh`
-- `yarn install`, `rails db:migrate`, `rails db:seed` in container
+- docker で立ち上げる場合は compose run でコマンドを実行してください。
+- サンプルの挿入は`rails db:seed`を実行してください。
+
+```
+bundle install
+yarn install
+rails db:migrate
+rails s
+```
